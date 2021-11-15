@@ -12,5 +12,5 @@
     - <a href="https://www.data.go.kr/data/15003027/openapi.do">시험일정 API</a>
     - <a href="https://www.data.go.kr/data/15064717/openapi.do">자격정보 교과과정 API</a>
     - <a href="https://www.data.go.kr/data/15025329/openapi.do">자격증 합격률 API</a>
-  - 그동안 놓쳤던 iOS 개발 지식들 복습
-    - link
+  - 간단한 목업 작성(Oven)
+    - https://ovenapp.io/project/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r#9cyNK
