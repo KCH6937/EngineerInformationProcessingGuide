@@ -26,4 +26,4 @@
   - 11.18 ~ 19 기획 발표 전에 팀끼리 간단하게 모의 발표 계획
 - 개인 학습
   - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 수정</a>
-  - 그동안 몰랐거나 놓쳤던 iOS 학습
+  - <a href="https://velog.io/@kcoo/1116화-iOS-복습-1일차">그동안 몰랐거나 놓쳤던 iOS 학습</a>
