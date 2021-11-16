@@ -14,7 +14,7 @@
     - <a href="https://www.data.go.kr/data/15025329/openapi.do">자격증 합격률 API</a>
   - 간단한 목업 작성(Oven)
     - https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar
-
+- - - 
 ## Day 2 (21.11.16)
 - Team Building
   - 앱 아이디어 결정
