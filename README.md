@@ -20,7 +20,7 @@
   - 앱 아이디어 결정
     - 김정민님 : <a href="https://github.com/wjdals0304/ios-daily-stock">주식 매매일지(ios-daily-stock)</a> 
     - 박우찬님 : <a href="https://github.com/Woozzang/ios-project-super_tomato">뽀모도로 타이머 + TodoList(ios-project-super_tomato)</a>
-    - 백유정님 : <a href="https://github.com/BAEKYUJEONG/MyBookReportApp">힐링 일기장</a>
+    - 백유정님 : <a href="https://github.com/BAEKYUJEONG/MyBookReportApp">도서 검색 및 기록(My Book Report App)</a>
   - 평가과제 코드 구현 방식 공유
   - 목업 작성 계획 시작 및 공수산정 방식 토론
   - 11.18 ~ 19 기획 발표 전에 팀끼리 간단하게 모의 발표 계획
