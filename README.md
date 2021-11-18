@@ -36,6 +36,6 @@
 ---
 ## Day 4 (21.11.18)
 - 개인 학습
-  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 변경(기획서, 이터레이션 추가)</a>
+  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 수정(기획서, 이터레이션 추가)</a>
   - 그동안 몰랐거나 놓쳤던 iOS 학습
   - 개인 프로젝트 제작 시작
