@@ -38,4 +38,11 @@
 - 개인 학습
   - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 수정(기획서, 이터레이션 추가)</a>
   - 그동안 몰랐거나 놓쳤던 iOS 학습
+  - 개인 프로젝트 제작 준비
+## Day 5 (21.11.19)
+- Team Building
+  - 각자 앱 제작 진행도 공유
+  - 기술 질문(API 관련)
+- 개인 학습
+  - 색상, 폰트 탐색
   - 개인 프로젝트 제작 시작
