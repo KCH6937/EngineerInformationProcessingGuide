@@ -13,7 +13,7 @@
     - <a href="https://www.data.go.kr/data/15064717/openapi.do">자격정보 교과과정 API</a>
     - <a href="https://www.data.go.kr/data/15025329/openapi.do">자격증 합격률 API</a>
   - 간단한 목업 작성(Oven)
-    - https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar
+    - https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/BeFzG
 - - - 
 ## Day 2 (21.11.16)
 - Team Building
@@ -25,18 +25,18 @@
   - 목업 작성 계획 시작 및 공수산정 방식 토론
   - 11.18 ~ 19 기획 발표 전에 팀끼리 간단하게 모의 발표 계획
 - 개인 학습
-  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 수정</a>
+  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/BeFzG">목업 수정</a>
   - <a href="https://velog.io/@kcoo/1116화-iOS-복습-1일차">그동안 몰랐거나 놓쳤던 iOS 학습</a>
 ---
 ## Day 3 (21.11.17)
 - Team Building
   - 모의 발표
 - 개인 학습
-  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 수정(launch screen 추가 등)</a>
+  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/BeFzG">목업 수정(launch screen 추가 등)</a>
 ---
 ## Day 4 (21.11.18)
 - 개인 학습
-  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/4YGar">목업 수정(기획서, 이터레이션 추가)</a>
+  - <a href="https://ovenapp.io/view/M4dULXy7SZIfYe2JDPaHf0LiQb7ghL2r/BeFzG">목업 수정(기획서, 이터레이션 추가)</a>
   - 그동안 몰랐거나 놓쳤던 iOS 학습
   - 개인 프로젝트 제작 준비
 ---
