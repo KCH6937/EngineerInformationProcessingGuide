@@ -4,9 +4,19 @@ class InfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        config()
     }
-
-
+    
 }
 
+
+
+
+// MARK: - config
+extension InfoViewController {
+
+    func config() {
+        print(#function)
+    }
+    
+}
