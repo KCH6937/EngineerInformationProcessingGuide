@@ -9,14 +9,10 @@ class InfoViewController: UIViewController {
     
 }
 
-
-
-
 // MARK: - config
 extension InfoViewController {
 
     func config() {
         print(#function)
     }
-    
 }

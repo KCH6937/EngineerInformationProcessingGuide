@@ -41,7 +41,6 @@ extension MapViewController {
     }
 }
 
-
 extension MapViewController: CLLocationManagerDelegate {
     
 }
