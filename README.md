@@ -47,3 +47,11 @@
 - 개인 학습
   - 색상, 폰트 탐색
   - 개인 프로젝트 제작 시작
+  - 화면전환 구현 3h -> 4h(Navigation Controller, TabBar Controller 연결방식 구글링 + 1h)
+---
+## Day 6 (21.11.22)
+- Team Building
+  - 각자 앱 제작 진행도 공유
+  - 기술 질문(네이버 검색 API)
+- 개인 학습
+  - 자료 View Controller 네이버 검색 API 연동
