@@ -55,3 +55,11 @@
   - 기술 질문(네이버 검색 API)
 - 개인 학습
   - 자료 View Controller 네이버 검색 API 연동
+---
+## Day 7,8 (21.11.23 ~ 24)
+- Team Building
+  - 각자 앱 제작 진행도 공유
+  - 기술 질문(네이버 검색 API 유정님 도움으로 해결)
+- 개인 학습
+  - 자료 View Controller 구현중(네이버 API 데이터 가공)
+  - 시험정보 View Controller 에 맞는 라이브러리 탐색
