@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  EngineerInformationProcessingGuide
-//
-//  Created by 강채현 on 2021/11/15.
-//
-
 import UIKit
 
 @main
