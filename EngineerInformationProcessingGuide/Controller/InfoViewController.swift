@@ -13,6 +13,6 @@ class InfoViewController: UIViewController {
 extension InfoViewController {
 
     func config() {
-        print(#function)
+
     }
 }
