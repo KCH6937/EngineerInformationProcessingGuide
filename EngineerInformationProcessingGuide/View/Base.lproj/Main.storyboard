@@ -7,6 +7,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,16 +34,72 @@
                     <view key="view" contentMode="scaleToFill" id="Lbv-UK-vUM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1RE-ME-tlq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DCN-mg-0cT">
+                                    <size key="itemSize" width="202" height="204"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DocumentCollectionViewCell" id="2ax-Wt-ob7" customClass="DocumentCollectionViewCell" customModule="EngineerInformationProcessingGuide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iIE-Zb-APy">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ic-aC-6PF">
+                                                    <rect key="frame" x="15" y="8" width="48" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="par-s7-9rl">
+                                                    <rect key="frame" x="15" y="47" width="140" height="145"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="par-s7-9rl" secondAttribute="trailing" constant="45" id="7Ey-Eg-XY4"/>
+                                                <constraint firstAttribute="bottom" secondItem="par-s7-9rl" secondAttribute="bottom" constant="8" id="Hhu-Fl-rlp"/>
+                                                <constraint firstItem="par-s7-9rl" firstAttribute="leading" secondItem="iIE-Zb-APy" secondAttribute="leading" constant="15" id="bzE-0L-4G0"/>
+                                                <constraint firstItem="5ic-aC-6PF" firstAttribute="top" secondItem="iIE-Zb-APy" secondAttribute="top" constant="8" id="hHN-A1-OqE"/>
+                                                <constraint firstItem="par-s7-9rl" firstAttribute="top" secondItem="5ic-aC-6PF" secondAttribute="bottom" constant="15" id="iiR-pT-nba"/>
+                                                <constraint firstItem="5ic-aC-6PF" firstAttribute="leading" secondItem="iIE-Zb-APy" secondAttribute="leading" constant="15" id="kmI-Xv-Coo"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="200" height="200"/>
+                                        <connections>
+                                            <outlet property="posterImageView" destination="par-s7-9rl" id="OUX-R9-dui"/>
+                                            <outlet property="titleLabel" destination="5ic-aC-6PF" id="Rvs-Nj-15F"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dPc-MX-WDw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1RE-ME-tlq" firstAttribute="leading" secondItem="dPc-MX-WDw" secondAttribute="leading" id="0Xt-kK-bhb"/>
+                            <constraint firstItem="dPc-MX-WDw" firstAttribute="trailing" secondItem="1RE-ME-tlq" secondAttribute="trailing" id="E3l-l3-uP9"/>
+                            <constraint firstItem="1RE-ME-tlq" firstAttribute="top" secondItem="dPc-MX-WDw" secondAttribute="top" id="lAJ-Fg-ESW"/>
+                            <constraint firstItem="dPc-MX-WDw" firstAttribute="bottom" secondItem="1RE-ME-tlq" secondAttribute="bottom" id="qCe-U8-6ga"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="자료" image="doc" catalog="system" id="l2X-0l-6b2"/>
+                    <connections>
+                        <outlet property="docCollectionView" destination="1RE-ME-tlq" id="8Fb-2K-LP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCA-s4-ldW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2204" y="-170"/>
+            <point key="canvasLocation" x="-2204.3478260869565" y="-170.08928571428569"/>
         </scene>
-        <!--Map View Controller-->
+        <!--정처기 가이드-->
         <scene sceneID="nFx-wd-yVZ">
             <objects>
                 <viewController id="Jlz-1p-yad" customClass="MapViewController" customModule="EngineerInformationProcessingGuide" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +134,7 @@
                             <constraint firstItem="Zfw-in-ae2" firstAttribute="trailing" secondItem="daN-dc-neF" secondAttribute="trailing" id="yiK-pT-Gpa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NZC-Uy-r17">
+                    <navigationItem key="navigationItem" title="정처기 가이드" id="NZC-Uy-r17">
                         <barButtonItem key="rightBarButtonItem" title="지역 선택" id="mAU-BY-vN5">
                             <connections>
                                 <action selector="areaSelectionButtonClicked:" destination="Jlz-1p-yad" id="s8C-5o-zKQ"/>
@@ -91,19 +148,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qug-Th-Q83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3249.275362318841" y="588.61607142857144"/>
+            <point key="canvasLocation" x="-3942" y="-858"/>
         </scene>
-        <!--즐겨찾기-->
+        <!--방문기록-->
         <scene sceneID="XPC-hV-u1e">
             <objects>
-                <viewController id="vqC-KT-fPo" customClass="FavoriteViewController" customModule="EngineerInformationProcessingGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vqC-KT-fPo" customClass="RecordViewController" customModule="EngineerInformationProcessingGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzp-Kv-wsa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-Fn-aiR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aYe-2k-vgu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZWM-Fn-aiR" firstAttribute="top" secondItem="aYe-2k-vgu" secondAttribute="top" id="U2e-E9-3cJ"/>
+                            <constraint firstItem="aYe-2k-vgu" firstAttribute="bottom" secondItem="ZWM-Fn-aiR" secondAttribute="bottom" id="VAy-kZ-b3v"/>
+                            <constraint firstItem="aYe-2k-vgu" firstAttribute="trailing" secondItem="ZWM-Fn-aiR" secondAttribute="trailing" id="tAT-0l-okj"/>
+                            <constraint firstItem="ZWM-Fn-aiR" firstAttribute="leading" secondItem="aYe-2k-vgu" secondAttribute="leading" id="uaJ-PD-W1f"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="star" catalog="system" id="wB2-9R-RSw"/>
+                    <tabBarItem key="tabBarItem" title="방문기록" image="star" catalog="system" id="wB2-9R-RSw"/>
+                    <connections>
+                        <outlet property="recordTableView" destination="ZWM-Fn-aiR" id="C83-T6-5ae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Og-sd-ztj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,6 +226,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etl-iO-FY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3249" y="-170"/>
+        </scene>
+        <!--Document Detail View Controller-->
+        <scene sceneID="5ha-tf-3J9">
+            <objects>
+                <viewController storyboardIdentifier="DocumentDetailViewController" id="af4-Id-QDr" customClass="DocumentDetailViewController" customModule="EngineerInformationProcessingGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fx7-kT-w8c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Wb-Gu-5Fv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="CRI-Pv-fFQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="필기"/>
+                                        <segment title="실기"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="typeOfTestChange:" destination="af4-Id-QDr" eventType="valueChanged" id="QQe-Tk-Qjb"/>
+                                    </connections>
+                                </segmentedControl>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RwR-S3-c32"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Wb-Gu-5Fv" firstAttribute="leading" secondItem="RwR-S3-c32" secondAttribute="leading" id="1rJ-hk-Apc"/>
+                            <constraint firstItem="8Wb-Gu-5Fv" firstAttribute="top" secondItem="RwR-S3-c32" secondAttribute="top" id="6hr-mg-8lZ"/>
+                            <constraint firstItem="RwR-S3-c32" firstAttribute="trailing" secondItem="8Wb-Gu-5Fv" secondAttribute="trailing" id="VbM-Af-qJg"/>
+                            <constraint firstItem="RwR-S3-c32" firstAttribute="bottom" secondItem="8Wb-Gu-5Fv" secondAttribute="bottom" id="WD4-OU-Vyw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="docDetailTableView" destination="8Wb-Gu-5Fv" id="XGN-aT-mSK"/>
+                        <outlet property="typeOfTestSegmentedControl" destination="CRI-Pv-fFQ" id="ONM-la-6VT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rI-5s-6Uu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2204.3478260869565" y="497.54464285714283"/>
         </scene>
     </scenes>
     <resources>
