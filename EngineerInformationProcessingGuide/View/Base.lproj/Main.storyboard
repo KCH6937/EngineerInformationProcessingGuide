@@ -10,6 +10,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GowunBatang-Bold.ttf">
+            <string>GowunBatang-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Z1X-gt-thD">
@@ -25,7 +30,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOn-kT-eKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3941" y="-169"/>
+            <point key="canvasLocation" x="-3964" y="-170"/>
         </scene>
         <!--자료-->
         <scene sceneID="3dR-fe-cwC">
@@ -52,30 +57,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ic-aC-6PF">
-                                                    <rect key="frame" x="15" y="8" width="48" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VD-H3-FMr">
+                                                    <rect key="frame" x="5" y="10" width="190" height="29"/>
+                                                    <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="par-s7-9rl">
-                                                    <rect key="frame" x="15" y="47" width="140" height="145"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="par-s7-9rl">
+                                                    <rect key="frame" x="0.0" y="41" width="200" height="159"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="par-s7-9rl" secondAttribute="trailing" constant="45" id="7Ey-Eg-XY4"/>
-                                                <constraint firstAttribute="bottom" secondItem="par-s7-9rl" secondAttribute="bottom" constant="8" id="Hhu-Fl-rlp"/>
-                                                <constraint firstItem="par-s7-9rl" firstAttribute="leading" secondItem="iIE-Zb-APy" secondAttribute="leading" constant="15" id="bzE-0L-4G0"/>
-                                                <constraint firstItem="5ic-aC-6PF" firstAttribute="top" secondItem="iIE-Zb-APy" secondAttribute="top" constant="8" id="hHN-A1-OqE"/>
-                                                <constraint firstItem="par-s7-9rl" firstAttribute="top" secondItem="5ic-aC-6PF" secondAttribute="bottom" constant="15" id="iiR-pT-nba"/>
-                                                <constraint firstItem="5ic-aC-6PF" firstAttribute="leading" secondItem="iIE-Zb-APy" secondAttribute="leading" constant="15" id="kmI-Xv-Coo"/>
+                                                <constraint firstAttribute="trailing" secondItem="par-s7-9rl" secondAttribute="trailing" id="7jZ-eG-mvG"/>
+                                                <constraint firstItem="7VD-H3-FMr" firstAttribute="top" secondItem="iIE-Zb-APy" secondAttribute="top" constant="10" id="GPb-wF-1us"/>
+                                                <constraint firstAttribute="trailing" secondItem="7VD-H3-FMr" secondAttribute="trailing" constant="5" id="Z0L-67-hhA"/>
+                                                <constraint firstItem="par-s7-9rl" firstAttribute="top" secondItem="7VD-H3-FMr" secondAttribute="bottom" constant="2" id="bAF-d9-Mz2"/>
+                                                <constraint firstAttribute="bottom" secondItem="par-s7-9rl" secondAttribute="bottom" id="cbi-pf-Sdk"/>
+                                                <constraint firstItem="7VD-H3-FMr" firstAttribute="leading" secondItem="iIE-Zb-APy" secondAttribute="leading" constant="5" id="hjl-FH-6xK"/>
+                                                <constraint firstItem="par-s7-9rl" firstAttribute="leading" secondItem="iIE-Zb-APy" secondAttribute="leading" id="i6i-vi-gOc"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="200"/>
                                         <connections>
                                             <outlet property="posterImageView" destination="par-s7-9rl" id="OUX-R9-dui"/>
-                                            <outlet property="titleLabel" destination="5ic-aC-6PF" id="Rvs-Nj-15F"/>
+                                            <outlet property="titleLabel" destination="7VD-H3-FMr" id="MH1-JY-8QY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -97,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCA-s4-ldW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2204.3478260869565" y="-170.08928571428569"/>
+            <point key="canvasLocation" x="-2204.3478260869565" y="-169.41964285714286"/>
         </scene>
         <!--정처기 가이드-->
         <scene sceneID="nFx-wd-yVZ">
@@ -197,11 +203,11 @@
             </objects>
             <point key="canvasLocation" x="-1555" y="-488"/>
         </scene>
-        <!--정처기가이드-->
+        <!--정처기 가이드-->
         <scene sceneID="8gv-EP-nEV">
             <objects>
                 <tabBarController id="pxb-RM-OhO" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="정처기가이드" id="kRL-tm-9wn">
+                    <navigationItem key="navigationItem" title="정처기 가이드" id="kRL-tm-9wn">
                         <barButtonItem key="backBarButtonItem" title="Back" id="zfW-gX-d7d"/>
                         <rightBarButtonItems>
                             <barButtonItem image="list.dash" catalog="system" id="vVu-Ao-voG"/>
@@ -225,7 +231,22 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etl-iO-FY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3249" y="-170"/>
+            <point key="canvasLocation" x="-3283" y="-170"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NpE-1e-jIY">
+            <objects>
+                <viewController id="wtl-FF-rzw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gkb-pS-71b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BpC-Gs-zpI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMX-T2-DKV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2923" y="498"/>
         </scene>
         <!--Document Detail View Controller-->
         <scene sceneID="5ha-tf-3J9">

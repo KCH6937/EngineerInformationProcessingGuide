@@ -8,7 +8,16 @@ class RecordViewController: UIViewController {
     let localRealm = try! Realm()
     
     var records: Results<Record>!
-
+    var recordDictionary: [Int: Array<Record>]! = [:]
+    
+    let CATEGORY_BLOG = "blog"
+    let CATEGORY_CAFE = "cafearticle"
+    let CATEGORY_BOOK = "book"
+    
+    let BOOK_STRING_CATEGORY_TO_SECTION = 0
+    let BLOG_STRING_CATEGORY_TO_SECTION = 1
+    let CAFE_STRING_CATEGORY_TO_SECTION = 2
+    
     @IBOutlet weak var recordTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,9 +35,11 @@ class RecordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
-
+        
+        recordDictionary = toDictionary(records: records)
         recordTableView.reloadData()
     }
+    
 }
 
 // MARK: - UDF func
@@ -45,29 +56,32 @@ extension RecordViewController {
         return set.count
     }
     
-    func eachCategoryRecords() -> [Int] {
-        var eachCategoryRecordsCount: [Int] = [0, 0, 0]
+    func toDictionary(records: Results<Record>) -> [Int: Array<Record>] {
+        var dictionary: [Int: Array<Record>] = [:]
+        dictionary[BOOK_STRING_CATEGORY_TO_SECTION] = Array<Record>()
+        dictionary[BLOG_STRING_CATEGORY_TO_SECTION] = Array<Record>()
+        dictionary[CAFE_STRING_CATEGORY_TO_SECTION] = Array<Record>()
         
-        for i in records {
-            if i.category == "book" {
-                eachCategoryRecordsCount[0] += 1
-            } else if i.category == "blog" {
-                eachCategoryRecordsCount[1] += 1
-            } else if i.category == "cafearticle" {
-                eachCategoryRecordsCount[2] += 1
+        for element in records {
+            if element.category == CATEGORY_BLOG {
+                dictionary[BLOG_STRING_CATEGORY_TO_SECTION]?.append(element)
+            }
+            else if element.category == CATEGORY_BOOK {
+                dictionary[BOOK_STRING_CATEGORY_TO_SECTION]?.append(element)
+            }
+            else {
+                dictionary[CAFE_STRING_CATEGORY_TO_SECTION]?.append(element)
             }
         }
-        
-        return eachCategoryRecordsCount
+        return dictionary
     }
     
 }
 
-
 // MARK: - Table View Config
 extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return numberOfCategories()
+        return recordDictionary.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -79,13 +93,14 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
             return "CAFE"
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return eachCategoryRecords()[0]
+            return recordDictionary[0]!.count
         } else if section == 1 {
-            return eachCategoryRecords()[1]
+            return recordDictionary[1]!.count
         } else {
-            return eachCategoryRecords()[2]
+            return recordDictionary[2]!.count
         }
 
     }
@@ -95,52 +110,46 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = recordTableView.dequeueReusableCell(withIdentifier: DocumentDetailTableViewCell.identifier, for: indexPath) as? DocumentDetailTableViewCell else {
             return UITableViewCell() }
         
-        var row = records[indexPath.row]
+        let recordData = recordDictionary[indexPath.section]?[indexPath.row]
         
-        var sectionArea: Int = 0
-
         if indexPath.section == 0 {
-            if let url = URL(string: row.image!) {
+            if let url = URL(string: recordData!.image!) {
+                cell.posterImageView.isHidden = false
                 cell.posterImageView.kf.setImage(with: url)
             } else {
                 cell.posterImageView.image = UIImage(systemName: "xmark")
             }
-            cell.titleLabel.text = row.title
-            cell.priceLabel.text = row.price
-            cell.authorLabel.text = row.writter
-            cell.dateLabel.text = row.pubdate
-            cell.descriptionLabel.text = row.descript
+            cell.titleLabel.text = recordData!.title
+            cell.priceLabel.text = recordData!.price
+            cell.authorLabel.text = recordData!.writter
+            cell.dateLabel.text = recordData!.pubdate
+            cell.descriptionLabel.text = recordData!.descript
             
         } else if indexPath.section == 1 {
-            sectionArea += eachCategoryRecords()[0]
-            row = records[indexPath.row + sectionArea]
-            
             cell.posterImageView.isHidden = true
-            cell.titleLabel.text = row.title
+            cell.titleLabel.text = recordData!.title
             cell.priceFormLabel.text = "작성자:"
-            cell.priceLabel.text = row.writter
+            cell.priceLabel.text = recordData!.writter
             cell.authorFormLabel.text = ""
             cell.authorLabel.text = ""
             cell.wonLabel.text = ""
-            cell.dateFormLabel.text = row.pubdate
+            cell.dateFormLabel.text = recordData!.pubdate
             cell.dateLabel.text = ""
-            cell.descriptionLabel.text = row.descript
+            cell.descriptionLabel.text = recordData!.descript
             
-        } else {
-            sectionArea += eachCategoryRecords()[1]
-            row = records[indexPath.row + sectionArea]
-            
+        } else if indexPath.section == 2 {
             cell.posterImageView.isHidden = true
-            cell.titleLabel.text = row.title
+            cell.titleLabel.text = recordData!.title
             cell.priceFormLabel.text = "카페:"
-            cell.priceLabel.text = row.writter
+            cell.priceLabel.text = recordData!.writter
             cell.authorFormLabel.text = ""
             cell.authorLabel.text = ""
             cell.wonLabel.text = ""
             cell.dateFormLabel.text = ""
             cell.dateLabel.text = ""
-            cell.descriptionLabel.text = row.descript
+            cell.descriptionLabel.text = recordData!.descript
         }
+        
         return cell
     }
     
@@ -157,10 +166,17 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        try! localRealm.write {
-            localRealm.delete( records[indexPath.row] )
-            tableView.reloadData()
+        
+        showAlert(title: "알림", message: "정말로 삭제하시겠습니까?", okTitle: "확인") {
+            let data = self.recordDictionary[indexPath.section]![indexPath.row]
+            self.recordDictionary[indexPath.section]!.remove(at: indexPath.row)
+            
+            try! self.localRealm.write {
+                self.localRealm.delete(data)
+                tableView.reloadData()
+            }
         }
+        
     }
 
     

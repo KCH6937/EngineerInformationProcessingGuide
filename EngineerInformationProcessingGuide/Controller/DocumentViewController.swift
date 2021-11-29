@@ -2,13 +2,22 @@ import UIKit
 
 class DocumentViewController: UIViewController {
 
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var docCollectionView: UICollectionView!
     
     let docInfo = DocumentInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if defaults.bool(forKey: "First Launch") == false {
+            
+            showOneButtonAlert(title: "알림", message: "안녕하세요!\n정처기 가이드는\n정보처리기사를 효율적으로 취득하도록\n여러 정보를 쉽고 간략하게 알려드립니다.", cancelTitle: "확인")
+            
+            defaults.set(true, forKey: "First Launch")
+        }
+        
         docCollectionView.delegate = self
         docCollectionView.dataSource = self
         
@@ -34,7 +43,7 @@ extension DocumentViewController: UICollectionViewDataSource, UICollectionViewDe
         let doc = docInfo.document[indexPath.item]
         
         cell.titleLabel.text = doc.title
-        cell.posterImageView.image = UIImage(systemName: doc.image)
+        cell.posterImageView.image = UIImage(named: doc.image)
         
         return cell
     }

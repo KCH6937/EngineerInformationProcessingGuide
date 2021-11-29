@@ -4,6 +4,7 @@ class InfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         config()
     }
     
@@ -13,6 +14,6 @@ class InfoViewController: UIViewController {
 extension InfoViewController {
 
     func config() {
-
+        fontApply()
     }
 }

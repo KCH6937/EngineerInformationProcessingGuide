@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GowunBatang-Bold.ttf</string>
+		<string>GowunBatang-Regular.ttf</string>
+		<string>BMDOHYEON_otf.otf</string>
+	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>앱을 열때마다 위치주소  가져오기 허용</string>
 	<key>UIApplicationSceneManifest</key>

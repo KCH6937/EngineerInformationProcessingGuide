@@ -28,6 +28,12 @@
 		DFAB770F2750E3E80078F956 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DFAB770E2750E3E80078F956 /* Realm */; };
 		DFAB77112750E3E80078F956 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DFAB77102750E3E80078F956 /* RealmSwift */; };
 		DFAB77132751092C0078F956 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB77122751092C0078F956 /* RealmModel.swift */; };
+		DFE50CED2754399E00F07D33 /* BMDOHYEON_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = DFE50CEC2754399E00F07D33 /* BMDOHYEON_otf.otf */; };
+		DFE50CF0275439DE00F07D33 /* GowunBatang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFE50CEE275439DE00F07D33 /* GowunBatang-Regular.ttf */; };
+		DFE50CF1275439DE00F07D33 /* GowunBatang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFE50CEF275439DE00F07D33 /* GowunBatang-Bold.ttf */; };
+		DFE50CF5275455F400F07D33 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE50CF4275455F400F07D33 /* Color+Extension.swift */; };
+		DFF2DFF82753CBE800659DDB /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2DFF72753CBE800659DDB /* Alert+Extension.swift */; };
+		DFF2DFFE2754332300659DDB /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2DFFD2754332300659DDB /* Font+Extension.swift */; };
 		DFF90DCC27426AC30011BAE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF90DCB27426AC30011BAE9 /* AppDelegate.swift */; };
 		DFF90DCE27426AC30011BAE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF90DCD27426AC30011BAE9 /* SceneDelegate.swift */; };
 		DFF90DD027426AC30011BAE9 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF90DCF27426AC30011BAE9 /* InfoViewController.swift */; };
@@ -53,6 +59,12 @@
 		DFAB7704274F127E0078F956 /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		DFAB7706274F14160078F956 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		DFAB77122751092C0078F956 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		DFE50CEC2754399E00F07D33 /* BMDOHYEON_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMDOHYEON_otf.otf; sourceTree = "<group>"; };
+		DFE50CEE275439DE00F07D33 /* GowunBatang-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Regular.ttf"; sourceTree = "<group>"; };
+		DFE50CEF275439DE00F07D33 /* GowunBatang-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Bold.ttf"; sourceTree = "<group>"; };
+		DFE50CF4275455F400F07D33 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		DFF2DFF72753CBE800659DDB /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
+		DFF2DFFD2754332300659DDB /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		DFF90DC827426AC30011BAE9 /* EngineerInformationProcessingGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineerInformationProcessingGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF90DCB27426AC30011BAE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF90DCD27426AC30011BAE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +129,9 @@
 		DFAB76E3274980110078F956 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DFF2DFF72753CBE800659DDB /* Alert+Extension.swift */,
+				DFF2DFFD2754332300659DDB /* Font+Extension.swift */,
+				DFE50CF4275455F400F07D33 /* Color+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -128,6 +143,24 @@
 				DFAB76FF274C5CD80078F956 /* DocumentDetailTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DFE50CF62754571400F07D33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFE50CF72754572700F07D33 /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFE50CF72754572700F07D33 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DFE50CEC2754399E00F07D33 /* BMDOHYEON_otf.otf */,
+				DFE50CEF275439DE00F07D33 /* GowunBatang-Bold.ttf */,
+				DFE50CEE275439DE00F07D33 /* GowunBatang-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DFF90DBF27426AC30011BAE9 = {
@@ -149,6 +182,7 @@
 		DFF90DCA27426AC30011BAE9 /* EngineerInformationProcessingGuide */ = {
 			isa = PBXGroup;
 			children = (
+				DFE50CF62754571400F07D33 /* Supporting Files */,
 				DFAB76E227497F0A0078F956 /* Model */,
 				DFAB76E027497EFA0078F956 /* View */,
 				DFAB76E127497F010078F956 /* Controller */,
@@ -240,6 +274,9 @@
 				DFAB7702274C5CD80078F956 /* DocumentDetailTableViewCell.xib in Resources */,
 				DFF90DD527426AC60011BAE9 /* Assets.xcassets in Resources */,
 				DFF90DD327426AC40011BAE9 /* Main.storyboard in Resources */,
+				DFE50CF0275439DE00F07D33 /* GowunBatang-Regular.ttf in Resources */,
+				DFE50CF1275439DE00F07D33 /* GowunBatang-Bold.ttf in Resources */,
+				DFE50CED2754399E00F07D33 /* BMDOHYEON_otf.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFAB76F42749B6070078F956 /* DocumentInfo.swift in Sources */,
+				DFE50CF5275455F400F07D33 /* Color+Extension.swift in Sources */,
+				DFF2DFF82753CBE800659DDB /* Alert+Extension.swift in Sources */,
 				DFAB7701274C5CD80078F956 /* DocumentDetailTableViewCell.swift in Sources */,
 				DFF90DD027426AC30011BAE9 /* InfoViewController.swift in Sources */,
 				DFAB76FC274C02420078F956 /* Book.swift in Sources */,
 				DFAB76F6274A38060078F956 /* SearchAPIManager.swift in Sources */,
+				DFF2DFFE2754332300659DDB /* Font+Extension.swift in Sources */,
 				DFAB76E7274996150078F956 /* TestLocationAPIManager.swift in Sources */,
 				DFAB76FA274C01DD0078F956 /* DocumentDetailViewController.swift in Sources */,
 				DFAB76F02749A9040078F956 /* DocumentCollectionViewCell.swift in Sources */,
@@ -344,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

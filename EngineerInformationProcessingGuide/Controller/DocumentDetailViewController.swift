@@ -27,6 +27,8 @@ class DocumentDetailViewController: UIViewController {
         docDetailTableView.delegate = self
         docDetailTableView.dataSource = self
         
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         let docDetailNib = UINib(nibName: DocumentDetailTableViewCell.identifier, bundle: nil)
         docDetailTableView.register(docDetailNib, forCellReuseIdentifier: DocumentDetailTableViewCell.identifier)
         
@@ -226,7 +228,9 @@ extension DocumentDetailViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        saveData(indexPath: indexPath)
+        showAlert(title: "알림", message: "방문기록에 저장해도 될까요?", okTitle: "저장") {
+            self.saveData(indexPath: indexPath)
+        }
     }
     
 }
