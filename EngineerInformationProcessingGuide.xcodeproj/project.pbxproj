@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF10A4A627550290007DB52D /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = DF10A4A527550290007DB52D /* SideMenu */; };
+		DF6A46062756A0FA00B034F9 /* CustomSideMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6A46052756A0FA00B034F9 /* CustomSideMenuNavigation.swift */; };
+		DF6A46082756A29900B034F9 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6A46072756A29900B034F9 /* SideMenuViewController.swift */; };
 		DFAB76DD27497E9E0078F956 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB76DC27497E9E0078F956 /* DocumentViewController.swift */; };
 		DFAB76DF27497ECF0078F956 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB76DE27497ECF0078F956 /* RecordViewController.swift */; };
 		DFAB76E527498B430078F956 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB76E427498B430078F956 /* MapViewController.swift */; };
@@ -43,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF6A46052756A0FA00B034F9 /* CustomSideMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigation.swift; sourceTree = "<group>"; };
+		DF6A46072756A29900B034F9 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		DFAB76DC27497E9E0078F956 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		DFAB76DE27497ECF0078F956 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		DFAB76E427498B430078F956 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 				DFAB76ED2749968E0078F956 /* SwiftyJSON in Frameworks */,
 				DFAB770F2750E3E80078F956 /* Realm in Frameworks */,
 				DFAB77112750E3E80078F956 /* RealmSwift in Frameworks */,
+				DF10A4A627550290007DB52D /* SideMenu in Frameworks */,
 				DFAB76EA274996680078F956 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +114,8 @@
 				DFAB76DE27497ECF0078F956 /* RecordViewController.swift */,
 				DFF90DCF27426AC30011BAE9 /* InfoViewController.swift */,
 				DFAB76E427498B430078F956 /* MapViewController.swift */,
+				DF6A46052756A0FA00B034F9 /* CustomSideMenuNavigation.swift */,
+				DF6A46072756A29900B034F9 /* SideMenuViewController.swift */,
 				DFAB76EE2749A8890078F956 /* Cells */,
 			);
 			path = Controller;
@@ -221,6 +229,7 @@
 				DFAB7709274F15000078F956 /* Kingfisher */,
 				DFAB770E2750E3E80078F956 /* Realm */,
 				DFAB77102750E3E80078F956 /* RealmSwift */,
+				DF10A4A527550290007DB52D /* SideMenu */,
 			);
 			productName = EngineerInformationProcessingGuide;
 			productReference = DFF90DC827426AC30011BAE9 /* EngineerInformationProcessingGuide.app */;
@@ -255,6 +264,7 @@
 				DFAB76EB2749968E0078F956 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				DFAB7708274F15000078F956 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DFAB770D2750E3E80078F956 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				DF10A4A427550290007DB52D /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = DFF90DC927426AC30011BAE9 /* Products */;
 			projectDirPath = "";
@@ -305,6 +315,8 @@
 				DFAB76F22749B1CA0078F956 /* Document.swift in Sources */,
 				DFAB77132751092C0078F956 /* RealmModel.swift in Sources */,
 				DFF90DCC27426AC30011BAE9 /* AppDelegate.swift in Sources */,
+				DF6A46062756A0FA00B034F9 /* CustomSideMenuNavigation.swift in Sources */,
+				DF6A46082756A29900B034F9 /* SideMenuViewController.swift in Sources */,
 				DFF90DCE27426AC30011BAE9 /* SceneDelegate.swift in Sources */,
 				DFAB76DF27497ECF0078F956 /* RecordViewController.swift in Sources */,
 				DFAB76F8274A38CF0078F956 /* Constants.swift in Sources */,
@@ -454,11 +466,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86D27W3NPD;
+				DEVELOPMENT_TEAM = 6YG35A77QB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EngineerInformationProcessingGuide/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱을 열때마다 위치주소  가져오기 허용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -472,6 +486,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssac.EngineerInformationProcessingGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -483,11 +498,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 86D27W3NPD;
+				DEVELOPMENT_TEAM = 6YG35A77QB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EngineerInformationProcessingGuide/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱을 열때마다 위치주소  가져오기 허용";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -501,6 +518,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssac.EngineerInformationProcessingGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -531,6 +549,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DF10A4A427550290007DB52D /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		DFAB76E8274996680078F956 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -566,6 +592,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DF10A4A527550290007DB52D /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF10A4A427550290007DB52D /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
 		DFAB76E9274996680078F956 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DFAB76E8274996680078F956 /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -11,6 +11,9 @@ class DocumentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(named: "Bar")
+        self.docCollectionView.backgroundColor = UIColor(named: "Background")
+        
         if defaults.bool(forKey: "First Launch") == false {
             
             showOneButtonAlert(title: "알림", message: "안녕하세요!\n정처기 가이드는\n정보처리기사를 효율적으로 취득하도록\n여러 정보를 쉽고 간략하게 알려드립니다.", cancelTitle: "확인")

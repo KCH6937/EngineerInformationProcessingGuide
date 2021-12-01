@@ -23,6 +23,9 @@ class RecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(named: "Bar")
+        self.recordTableView.backgroundColor = UIColor(named: "Background")
+        
         recordTableView.delegate = self
         recordTableView.dataSource = self
         
@@ -30,7 +33,6 @@ class RecordViewController: UIViewController {
         
         let docDetailNib = UINib(nibName: DocumentDetailTableViewCell.identifier, bundle: nil)
         recordTableView.register(docDetailNib, forCellReuseIdentifier: DocumentDetailTableViewCell.identifier)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +78,15 @@ extension RecordViewController {
         return dictionary
     }
     
+    func removeAllRecords() {
+        self.recordDictionary.removeAll()
+        
+        try! self.localRealm.write {
+            self.localRealm.deleteAll()
+            recordTableView.reloadData()
+        }
+    }
+    
 }
 
 // MARK: - Table View Config
@@ -107,50 +118,67 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = recordTableView.dequeueReusableCell(withIdentifier: DocumentDetailTableViewCell.identifier, for: indexPath) as? DocumentDetailTableViewCell else {
-            return UITableViewCell() }
-        
         let recordData = recordDictionary[indexPath.section]?[indexPath.row]
         
         if indexPath.section == 0 {
+            guard let bookCell = recordTableView.dequeueReusableCell(withIdentifier: DocumentDetailTableViewCell.identifier, for: indexPath) as?
+                    DocumentDetailTableViewCell else { return UITableViewCell() }
+            
             if let url = URL(string: recordData!.image!) {
-                cell.posterImageView.isHidden = false
-                cell.posterImageView.kf.setImage(with: url)
+                bookCell.posterImageView.isHidden = false
+                bookCell.posterImageView.kf.setImage(with: url)
             } else {
-                cell.posterImageView.image = UIImage(systemName: "xmark")
+                bookCell.posterImageView.image = UIImage(systemName: "xmark")
             }
-            cell.titleLabel.text = recordData!.title
-            cell.priceLabel.text = recordData!.price
-            cell.authorLabel.text = recordData!.writter
-            cell.dateLabel.text = recordData!.pubdate
-            cell.descriptionLabel.text = recordData!.descript
+            bookCell.titleLabel.text = recordData!.title
+            bookCell.priceFormLabel.text = "가격:"
+            bookCell.priceLabel.text = recordData!.price
+            bookCell.authorFormLabel.text = "저자:"
+            bookCell.authorLabel.text = recordData!.writter
+            bookCell.wonLabel.text = "원"
+            bookCell.dateFormLabel.text = "출간일: "
+            bookCell.dateLabel.text = recordData!.pubdate
+            bookCell.descriptionLabel.text = recordData!.descript
+            
+            return bookCell
             
         } else if indexPath.section == 1 {
-            cell.posterImageView.isHidden = true
-            cell.titleLabel.text = recordData!.title
-            cell.priceFormLabel.text = "작성자:"
-            cell.priceLabel.text = recordData!.writter
-            cell.authorFormLabel.text = ""
-            cell.authorLabel.text = ""
-            cell.wonLabel.text = ""
-            cell.dateFormLabel.text = recordData!.pubdate
-            cell.dateLabel.text = ""
-            cell.descriptionLabel.text = recordData!.descript
+            guard let blogCell = recordTableView.dequeueReusableCell(withIdentifier: DocumentDetailTableViewCell.identifier, for: indexPath) as?
+                    DocumentDetailTableViewCell else { return UITableViewCell() }
+            
+            blogCell.posterImageView.isHidden = true
+            blogCell.titleLabel.text = recordData!.title
+            blogCell.priceFormLabel.text = "작성자:"
+            blogCell.priceLabel.text = recordData!.writter
+            blogCell.authorFormLabel.text = ""
+            blogCell.authorLabel.text = ""
+            blogCell.wonLabel.text = ""
+            blogCell.dateFormLabel.text = recordData!.pubdate
+            blogCell.dateLabel.text = ""
+            blogCell.descriptionLabel.text = recordData!.descript
+            
+            return blogCell
             
         } else if indexPath.section == 2 {
-            cell.posterImageView.isHidden = true
-            cell.titleLabel.text = recordData!.title
-            cell.priceFormLabel.text = "카페:"
-            cell.priceLabel.text = recordData!.writter
-            cell.authorFormLabel.text = ""
-            cell.authorLabel.text = ""
-            cell.wonLabel.text = ""
-            cell.dateFormLabel.text = ""
-            cell.dateLabel.text = ""
-            cell.descriptionLabel.text = recordData!.descript
+            guard let cafeCell = recordTableView.dequeueReusableCell(withIdentifier: DocumentDetailTableViewCell.identifier, for: indexPath) as?
+                    DocumentDetailTableViewCell else { return UITableViewCell() }
+            
+            cafeCell.posterImageView.isHidden = true
+            cafeCell.titleLabel.text = recordData!.title
+            cafeCell.priceFormLabel.text = "카페:"
+            cafeCell.priceLabel.text = recordData!.writter
+            cafeCell.authorFormLabel.text = ""
+            cafeCell.authorLabel.text = ""
+            cafeCell.wonLabel.text = ""
+            cafeCell.dateFormLabel.text = ""
+            cafeCell.dateLabel.text = ""
+            cafeCell.descriptionLabel.text = recordData!.descript
+            
+            return cafeCell
+        } else {
+            return UITableViewCell()
         }
-        
-        return cell
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -178,7 +206,5 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-
-    
    
 }

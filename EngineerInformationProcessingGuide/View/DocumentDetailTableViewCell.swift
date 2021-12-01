@@ -16,20 +16,6 @@ class DocumentDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        titleLabel.text = nil
-        priceFormLabel.text = "가격: "
-        priceLabel.text = nil
-        authorFormLabel.text = "저자: "
-        authorLabel.text = nil
-        wonLabel.text = "원"
-        dateFormLabel.text = nil
-        dateLabel.text = nil
-        descriptionLabel.text = nil
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

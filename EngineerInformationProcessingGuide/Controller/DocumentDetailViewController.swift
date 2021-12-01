@@ -21,18 +21,19 @@ class DocumentDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(named: "Bar")
+        self.docDetailTableView.backgroundColor = UIColor(named: "Background")
+        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        self.title = "정처기 가이드"
         
         docDetailTableView.delegate = self
         docDetailTableView.dataSource = self
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
         let docDetailNib = UINib(nibName: DocumentDetailTableViewCell.identifier, bundle: nil)
         docDetailTableView.register(docDetailNib, forCellReuseIdentifier: DocumentDetailTableViewCell.identifier)
         
-        fetchData(type: "필기")
+        fetchData(type: "필기") // at first view
     }
     
     @IBAction func typeOfTestChange(_ sender: UISegmentedControl) {
@@ -184,8 +185,12 @@ extension DocumentDetailViewController: UITableViewDelegate, UITableViewDataSour
             }
             
             cell.titleLabel.text = row.title
+            cell.priceFormLabel.text = "가격: "
             cell.priceLabel.text = row.price
+            cell.authorFormLabel.text = "저자: "
+//            cell.wonLabel.text = "원"
             cell.authorLabel.text = row.author
+            cell.dateFormLabel.text = "출간일: "
             cell.dateLabel.text = row.pubdate
             cell.descriptionLabel.text = row.description
             

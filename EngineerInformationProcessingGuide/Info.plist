@@ -8,8 +8,6 @@
 		<string>GowunBatang-Regular.ttf</string>
 		<string>BMDOHYEON_otf.otf</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>앱을 열때마다 위치주소  가져오기 허용</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
