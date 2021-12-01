@@ -159,6 +159,20 @@ extension DocumentDetailViewController {
         }
         
     }
+    
+    func retCategoryDataLink(indexPath: IndexPath) -> String {
+        
+        switch category {
+        case "book":
+            return bookData[indexPath.row].link
+        case "blog":
+            return blogData[indexPath.row].link
+        case "cafearticle":
+            return cafeData[indexPath.row].link
+        default:
+            return "NONE DATA"
+        }
+    }
 
 }
 
@@ -233,6 +247,14 @@ extension DocumentDetailViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let link = retCategoryDataLink(indexPath: indexPath)
+        
+        guard let webViewController = self.storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController else { return }
+        
+        webViewController.link = link
+        
+        self.navigationController?.pushViewController(webViewController, animated: true)
+        
         showAlert(title: "알림", message: "방문기록에 저장해도 될까요?", okTitle: "저장") {
             self.saveData(indexPath: indexPath)
         }

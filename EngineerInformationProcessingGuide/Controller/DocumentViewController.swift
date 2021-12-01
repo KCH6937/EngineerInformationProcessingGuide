@@ -78,6 +78,7 @@ extension DocumentViewController {
         
         docCollectionView.collectionViewLayout = layout
         
+        fontApply()
     }
 
 }

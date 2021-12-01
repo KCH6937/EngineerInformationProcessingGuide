@@ -9,6 +9,9 @@ class CustomSideMenuNavigation: SideMenuNavigationController {
         self.navigationBar.backgroundColor = UIColor(named: "Bar")
         self.presentationStyle = .menuSlideIn
         self.menuWidth = self.view.frame.width * 0.5
+        self.statusBarEndAlpha = 0.0
+        self.presentDuration = 0.7
+        self.dismissDuration = 0.7
         
         let nsAtr: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.font: UIFont(name: "BM DoHyeon OTF", size: 20)!,

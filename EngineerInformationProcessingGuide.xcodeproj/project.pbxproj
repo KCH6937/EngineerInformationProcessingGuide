@@ -10,6 +10,7 @@
 		DF10A4A627550290007DB52D /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = DF10A4A527550290007DB52D /* SideMenu */; };
 		DF6A46062756A0FA00B034F9 /* CustomSideMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6A46052756A0FA00B034F9 /* CustomSideMenuNavigation.swift */; };
 		DF6A46082756A29900B034F9 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6A46072756A29900B034F9 /* SideMenuViewController.swift */; };
+		DF6A460C2757239C00B034F9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6A460B2757239C00B034F9 /* WebViewController.swift */; };
 		DFAB76DD27497E9E0078F956 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB76DC27497E9E0078F956 /* DocumentViewController.swift */; };
 		DFAB76DF27497ECF0078F956 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB76DE27497ECF0078F956 /* RecordViewController.swift */; };
 		DFAB76E527498B430078F956 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB76E427498B430078F956 /* MapViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		DF6A46052756A0FA00B034F9 /* CustomSideMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigation.swift; sourceTree = "<group>"; };
 		DF6A46072756A29900B034F9 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		DF6A460B2757239C00B034F9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DFAB76DC27497E9E0078F956 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		DFAB76DE27497ECF0078F956 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		DFAB76E427498B430078F956 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				DFAB76E427498B430078F956 /* MapViewController.swift */,
 				DF6A46052756A0FA00B034F9 /* CustomSideMenuNavigation.swift */,
 				DF6A46072756A29900B034F9 /* SideMenuViewController.swift */,
+				DF6A460B2757239C00B034F9 /* WebViewController.swift */,
 				DFAB76EE2749A8890078F956 /* Cells */,
 			);
 			path = Controller;
@@ -304,6 +307,7 @@
 				DFF90DD027426AC30011BAE9 /* InfoViewController.swift in Sources */,
 				DFAB76FC274C02420078F956 /* Book.swift in Sources */,
 				DFAB76F6274A38060078F956 /* SearchAPIManager.swift in Sources */,
+				DF6A460C2757239C00B034F9 /* WebViewController.swift in Sources */,
 				DFF2DFFE2754332300659DDB /* Font+Extension.swift in Sources */,
 				DFAB76E7274996150078F956 /* TestLocationAPIManager.swift in Sources */,
 				DFAB76FA274C01DD0078F956 /* DocumentDetailViewController.swift in Sources */,

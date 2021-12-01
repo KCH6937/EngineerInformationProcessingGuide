@@ -18,6 +18,8 @@ class RecordViewController: UIViewController {
     let BLOG_STRING_CATEGORY_TO_SECTION = 1
     let CAFE_STRING_CATEGORY_TO_SECTION = 2
     
+    static var isAllDelete = false
+    
     @IBOutlet weak var recordTableView: UITableView!
     
     override func viewDidLoad() {
@@ -39,7 +41,15 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
         
         recordDictionary = toDictionary(records: records)
+        
+        let isDelete = RecordViewController.isAllDelete
+        
+        removeAllRecords(isDelete: isDelete)
+        
         recordTableView.reloadData()
+        
+        RecordViewController.isAllDelete = false
+        
     }
     
 }
@@ -78,12 +88,14 @@ extension RecordViewController {
         return dictionary
     }
     
-    func removeAllRecords() {
-        self.recordDictionary.removeAll()
-        
-        try! self.localRealm.write {
-            self.localRealm.deleteAll()
-            recordTableView.reloadData()
+    func removeAllRecords(isDelete: Bool) {
+        if isDelete == true {
+            self.recordDictionary.removeAll()
+            
+            try! self.localRealm.write {
+                self.localRealm.deleteAll()
+                self.recordTableView.reloadData()
+            }
         }
     }
     
@@ -186,7 +198,14 @@ extension RecordViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        let recordData = recordDictionary[indexPath.section]?[indexPath.row]
+        
+        guard let webViewController = self.storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as? WebViewController else { return }
+        
+        webViewController.link = recordData!.link
+        
+        self.navigationController?.pushViewController(webViewController, animated: true)
+     
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

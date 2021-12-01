@@ -13,6 +13,8 @@ class SideMenuViewController: UIViewController {
     }
     
     @IBAction func onclickDeleteAll(_ sender: UIButton) {
-        
+        showAlert(title: "알림", message: "모든 방문기록을 지우시겠어요?", okTitle: "확인") {
+            RecordViewController.isAllDelete = true
+        }
     }
 }
