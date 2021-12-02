@@ -306,7 +306,6 @@
         <!--Custom Side Menu Navigation-->
         <scene sceneID="s8Q-eZ-ZWc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bkk-hN-8Pf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="ZET-xZ-MzY" customClass="CustomSideMenuNavigation" customModule="EngineerInformationProcessingGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qui-5Y-hjk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -316,6 +315,7 @@
                         <segue destination="q6M-jt-6aS" kind="relationship" relationship="rootViewController" id="F7r-Ui-lTb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkk-hN-8Pf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2990" y="-858"/>
         </scene>
@@ -464,7 +464,7 @@
             <color red="0.93699997663497925" green="0.9649999737739563" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Cell">
-            <color red="0.92549026010000002" green="0.95686274770000002" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.92500001192092896" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
